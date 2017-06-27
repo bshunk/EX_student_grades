@@ -13,18 +13,44 @@
 // What is the lowest grade?
 // What is the highest grade?
 
-var scores = [82, 71, 95, 55, 98, 69, 72, 78, 84, 64, 58, 87];
-var a, b, c, d, f;
+var scores = [82, 71, 95, 55, 98, 69, 72, 78, 84, 64, 58, 87, 100];
+var a = 0, b = 0, c = 0, d = 0, f = 0;
 
-for (var i = scores.length; i < scores.length; i++) {
-	if (scores[i] > 90) {
-		a++
-	} 
-	console.log("Number of A's", a)
+for (var i = 0; i < scores.length; i++) {
+	if (scores[i] >= 90) {
+		a++;
+	} else if (scores[i] >= 80 && scores[i] < 90) {
+		b++
+	} else if (scores[i] >= 70 && scores[i] < 80) {
+		c++
+	} else if (scores[i] >= 60 && scores[i] < 70) {
+		d++
+	} else {
+		(f++)
+	}
 }
 
+console.log("number of a's = ", a);
+
+console.log("number of b's = ", b);
+
+console.log("number of c's = ", c);
+
+console.log("number of d's = ", d);
+
+console.log("number of f's = ", f);
 
 
+
+scores.sort(function(a, b) {
+	return a - b;
+});
+
+console.log("sorted", scores.sort(function(a, b){return a - b;}));
+
+console.log("lowest grade", scores[0]);
+
+console.log("highest grade", scores[scores.length - 1]);
 
 
 
